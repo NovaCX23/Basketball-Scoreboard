@@ -9,6 +9,11 @@ function updateScore() {
     home.textContent = homeScore;
     away.textContent = awayScore;
 }
+function resetScores() {
+    homeScore = 0; 
+    awayScore = 0;
+    updateScore();
+}
 
 document.querySelectorAll(".Home .score-btns button").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -27,7 +32,5 @@ document.querySelectorAll(".Away .score-btns button").forEach(btn => {
 });
 
 resetBtn.addEventListener("click", () => {
-    homeScore = 0;
-    awayScore = 0;
-    updateScore();
+    resetScores();
 });
